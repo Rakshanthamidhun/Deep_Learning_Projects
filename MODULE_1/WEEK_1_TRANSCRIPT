@@ -1,0 +1,1255 @@
+Hello and welcome. As you probably know, deep learning has already transformed 
+traditional internet businesses like web search and advertising. 
+But deep learning is also enabling 
+brand new products and businesses and ways of helping people to be created. 
+Everything ranging from better healthcare, 
+where deep learning is getting really good at reading 
+X-ray images to delivering personalized education, 
+to precision agriculture, to even self-driving cars and many others. 
+If you want to learn the tools of deep learning and 
+be able to apply them to build these amazing things, 
+I want to help you get there. 
+When you finish the sequence of courses on Coursera, 
+called the specialization, you will be able to put 
+deep learning onto your resume with confidence. 
+Over the next decade, 
+I think all of us have an opportunity to build an amazing world, amazing society, 
+that is AI-powered, 
+and I hope that you will play a big role in the creation of this AI-powered society. 
+So that, let's get started. 
+I think that AI is the new electricity. 
+Starting about 100 years ago, 
+the electrification of our society transformed every major industry, 
+everything ranging from transportation, manufacturing, 
+to healthcare, to communications and many more. 
+And I think that today, we see a surprisingly clear path 
+for AI to bring about an equally big transformation. 
+And of course, the part of AI that is rising 
+rapidly and driving a lot of these developments, is deep learning. 
+So today, deep learning is one of the most 
+highly sought after skills in the technology world. 
+And through this course, and a few courses after this one, 
+I want to help you to gain and master those skills. 
+So here is what you will learn in this sequence of 
+courses also called a specialization on Coursera. 
+In the first course, 
+you will learn about the foundations of neural networks, 
+you will learn about neural networks and deep learning. 
+This video that you are watching is part of 
+this first course, which last four weeks in total. 
+And each of the five courses in the specialization will be about two to four weeks, 
+with most of them actually shorter than four weeks. 
+But in this first course, 
+you will learn how to build a neural network, including 
+a deep neural network, and how to train it on data. 
+And at the end of this course, 
+you will be able to build a deep neural network to recognize, guess what? 
+Cats. For some reason, 
+there is a cat meme running around in deep learning. 
+And so, following tradition in this first course, 
+we will build a cat recognizer. 
+Then in the second course, 
+you will learn about the practical aspects of deep learning. 
+So you will learn, now that you have built a neurak network, 
+how to actually get it to perform well. 
+So you learn about hyperparameter tuning, regularization, 
+how to diagnose bias, and variants, and advance 
+optimization algorithms, like momentum, armrest, prop, and the ad authorization algorithm. 
+Sometimes it seems like there is a lot of tuning, 
+even some black magic in how you build a new network. 
+So the second course, which is just three weeks, 
+will demystify some of that black magic. 
+In the third course, which is just two weeks, 
+you will learn how to structure your machine learning project. 
+It turns out that the strategy for building 
+a machine learning system has changed in the era of deep learning. 
+So for example, the way you split your data into train, 
+development or dev, also called holdout cross-validation sets, and test sets, 
+has changed in the era of deep learning. 
+So what are the new best practices for doing that? 
+And whether if your training set and your test come from different distributions, 
+that is happening a lot more in the era of deep learning. 
+So, how do you deal with that? 
+And if you have heard of end-to-end deep learning, 
+you will also learn more about that in this third course, 
+and see when you should use it and maybe when you shouldn't. 
+The material in this third course is relatively unique. 
+I am going to share of you a lot of the hard-won lessons that I have learned, 
+building and shipping quite a lot of deep learning products. 
+As far as I know, 
+this is largely material that is not taught in 
+most universities that have deep learning courses. 
+But I think it will really help you to get your deep learning systems to work well. 
+In the next course, 
+we will then talk about convolutional neural networks, often abbreviated CNNs. 
+Convolutional networks, or convolutional neural networks, are often applied to images. 
+So you will learn how to build these models in course four. 
+Finally, in course five, 
+you will learn sequence models and how to apply 
+them to natural language processing and other problems. 
+So sequence models includes models like 
+recurrent neural networks, abbreviated RNNs, and LSTM models, 
+stands for a long short term memory models. 
+You will learn what these terms mean in course five and be able to 
+apply them to natural language processing problems. 
+So you will learn these models in course five and be able to apply them to sequence data. 
+So for example, natural language is just a sequence of words, 
+and you will also understand how these models can be applied to speech recognition, 
+or to music generation, and other problems. 
+So through these courses, 
+you will learn the tools of deep learning, 
+you will be able to apply them to build amazing things, 
+and I hope many of you through this will also be able to advance your career. 
+So with that, let's get started. 
+Please go on to the next video where we will talk about 
+deep learning applied to supervised learning.
+
+From <https://www.coursera.org/learn/neural-networks-deep-learning/lecture/Cuf2f/welcome> 
+
+The term, Deep Learning, refers to training Neural Networks, 
+sometimes very large Neural Networks. 
+So what exactly is a Neural Network? 
+In this video, let's try to give you some of the basic intuitions.
+Play video starting at ::12 and follow transcript0:12
+Let's start with a Housing Price Prediction example. 
+Let's say you have a data set with six houses, so you know the size of the houses 
+in square feet or square meters and you know the price of the house and you want 
+to fit a function to predict the price of a house as a function of its size. 
+So if you are familiar with linear regression you might say, well let's 
+put a straight line to this data, so, and we get a straight line like that. 
+But to be put fancier, you might say, well we know that prices 
+can never be negative, right? 
+So instead of the straight line fit, which eventually will become negative, 
+let's bend the curve here. 
+So it just ends up zero here. 
+So this thick blue line ends up being your function for 
+predicting the price of the house as a function of its size. 
+Where it is zero here and then there is a straight line fit to the right.
+Play video starting at :1:4 and follow transcript1:04
+So you can think of this function that you have just fit to housing prices 
+as a very simple neural network. 
+It is almost the simplest possible neural network. 
+Let me draw it here.
+Play video starting at :1:17 and follow transcript1:17
+We have as the input to the neural network the size of a house which we call x. 
+It goes into this node, this little circle and 
+then it outputs the price which we call y. 
+So this little circle, which is a single neuron in a neural network, 
+implements this function that we drew on the left.
+Play video starting at :1:43 and follow transcript1:43
+And all that the neuron does is it inputs the size, computes this linear function, 
+takes a max of zero, and then outputs the estimated price.
+Play video starting at :1:53 and follow transcript1:53
+And by the way in the neural network literature, you will see this function a lot. 
+This function which goes to zero sometimes and 
+then it'll take of as a straight line. 
+This function is called a ReLU function which stands for 
+rectified linear units. 
+So R-E-L-U. And 
+rectify just means taking a max of 0 which is why you get a function shape like this.
+Play video starting at :2:23 and follow transcript2:23
+You don't need to worry about ReLU units for 
+now but it's just something you will see again later in this course. 
+So if this is a single neuron, neural network, 
+really a tiny little neural network, a larger neural network 
+is then formed by taking many of the single neurons and stacking them together. 
+So, if you think of this neuron that's being like a single Lego brick, you then 
+get a bigger neural network by stacking together many of these Lego bricks. 
+Let's see an example.
+Play video starting at :2:57 and follow transcript2:57
+Let’s say that instead of predicting the price of a house just from the size, 
+you now have other features. 
+You know other things about the house, such as the number of bedrooms, 
+which we would write as "#bedrooms", and you might think that one of the things 
+that really affects the price of a house is family size, right? 
+So can this house fit your family of three, or family of four, or 
+family of five? 
+And it's really based on the size in square feet or square meters, and 
+the number of bedrooms that determines whether or 
+not a house can fit your family's family size. 
+And then maybe you know the zip codes, 
+in different countries it's called a postal code of a house. 
+And the zip code maybe as a feature tells you, walkability? 
+So is this neighborhood highly walkable? 
+Think just walks to the grocery store? 
+Walk to school? 
+Do you need to drive? 
+And some people prefer highly walkable neighborhoods. 
+And then the zip code as well as the wealth maybe tells you, right. 
+Certainly in the United States but some other countries as well. 
+Tells you how good is the school quality. 
+So each of these little circles I'm drawing, can be one of those ReLU, 
+rectified linear units or some other slightly non linear function. 
+So that based on the size and number of bedrooms, 
+you can estimate the family size, their zip code, based on walkability, 
+based on zip code and wealth can estimate the school quality. 
+And then finally you might think that well the way people decide how much they're 
+willing to pay for a house, is they look at the things that really matter to them. 
+In this case family size, walkability, and school quality and 
+that helps you predict the price.
+Play video starting at :4:46 and follow transcript4:46
+So in the example x is all of these four inputs.
+Play video starting at :4:53 and follow transcript4:53
+And y is the price you're trying to predict.
+Play video starting at :4:57 and follow transcript4:57
+And so by stacking together a few of the single neurons or the simple predictors 
+we have from the previous slide, we now have a slightly larger neural network. 
+How you manage neural network is that when you implement it, 
+you need to give it just the input x and 
+the output y for a number of examples in your training set and 
+all these things in the middle, they will figure out by itself.
+Play video starting at :5:25 and follow transcript5:25
+So what you actually implement is this. 
+Where, here, you have a neural network with four inputs. 
+So the input features might be the size, number of bedrooms, 
+the zip code or postal code, and the wealth of the neighborhood. 
+And so given these input features, 
+the job of the neural network will be to predict the price y. 
+And notice also that each of these circles, these are called hidden units in 
+the neural network, that each of them takes its inputs all four input features. 
+So for example, rather than saying this first node represents family size and 
+family size depends only on the features X1 and X2. 
+Instead, we're going to say, well neural network, 
+you decide whatever you want this node to be. 
+And we'll give you all four input features to compute whatever you want. 
+So we say that layer that this is input layer and 
+this layer in the middle of the neural network are densely connected. 
+Because every input feature is connected to every one 
+of these circles in the middle. 
+And the remarkable thing about neural networks is that, given enough data about 
+x and y, given enough training examples with both x and y, neural networks 
+are remarkably good at figuring out functions that accurately map from x to y.
+Play video starting at :6:48 and follow transcript6:48
+So, that's a basic neural network. 
+It turns out that as you build out your own neural networks, 
+you'll probably find them to be most useful, most powerful 
+in supervised learning incentives, meaning that you're trying to take an input x and 
+map it to some output y, like we just saw in the housing price prediction example. 
+In the next video let's go over some more examples of supervised learning and 
+some examples of where you might find your networks to be incredibly helpful for 
+your applications as well.
+
+From <https://www.coursera.org/learn/neural-networks-deep-learning/lecture/eAE2G/what-is-a-neural-network> 
+
+There's been a lot of hype about neural networks. 
+And perhaps some of that hype is justified, given how well they're working. 
+But it turns out that so 
+far, almost all the economic value created by neural networks has been through 
+one type of machine learning, called supervised learning. 
+Let's see what that means, and let's go over some examples. 
+In supervised learning, you have some input x, and 
+you want to learn a function mapping to some output y. 
+So for example, just now we saw the housing price prediction application where 
+you input some features of a home and try to output or estimate the price y. 
+Here are some other examples that neural networks have been applied to very 
+effectively. 
+Possibly the single most lucrative application of deep learning today is 
+online advertising, maybe not the most inspiring, but certainly very lucrative, 
+in which, by inputting information about an ad to the website it's thinking 
+of showing you, and some information about the user, neural networks have 
+gotten very good at predicting whether or not you click on an ad. 
+And by showing you and 
+showing users the ads that you are most likely to click on, this has been 
+an incredibly lucrative application of neural networks at multiple companies. 
+Because the ability to show you ads that you're more likely to 
+click on has a direct impact on the bottom 
+line of some of the very large online advertising companies.
+Play video starting at :1:30 and follow transcript1:30
+Computer vision has also made huge strides in the last several years, 
+mostly due to deep learning. 
+So you might input an image and want to output an index, 
+say from 1 to 1,000 trying to tell you if this picture, 
+it might be any one of, say a 1000 different images. 
+So, you might us that for photo tagging. 
+I think the recent progress in speech recognition has also been very exciting, 
+where you can now input an audio clip to a neural network, and 
+have it output a text transcript. 
+Machine translation has also made huge strides thanks to deep learning where now 
+you can have a neural network input an English sentence and directly output say, 
+a Chinese sentence. 
+And in autonomous driving, you might input an image, say a picture of what's in 
+front of your car as well as some information from a radar, and 
+based on that, maybe a neural network can be trained to tell you the position 
+of the other cars on the road. 
+So this becomes a key component in autonomous driving systems. 
+So a lot of the value creation through neural networks has been through cleverly 
+selecting what should be x and what should be y for 
+your particular problem, and then fitting this supervised learning component into 
+often a bigger system such as an autonomous vehicle. 
+It turns out that slightly different types of neural networks are useful for 
+different applications. 
+For example, in the real estate application that we saw in the previous 
+video, we use a universally standard neural network architecture, right? 
+Maybe for real estate and online advertising might be a relatively 
+standard neural network, like the one that we saw.
+Play video starting at :3:13 and follow transcript3:13
+For image applications we'll often use convolutional neural networks, 
+often abbreviated CNN.
+Play video starting at :3:21 and follow transcript3:21
+And for sequence data. 
+So for example, audio has a temporal component, right? 
+Audio is played out over time, so audio is most naturally represented 
+as a one-dimensional time series or as a one-dimensional temporal sequence. 
+And so for sequence data, you often use an RNN, 
+a recurrent neural network. 
+Language, English and Chinese, the alphabets or the words come one at a time. 
+So language is also most naturally represented as sequence data. 
+And so more complex versions of RNNs are often used for these applications. 
+And then, for more complex applications, like autonomous driving, where you have an 
+image, that might suggest more of a CNN, convolution neural network, structure and 
+radar info which is something quite different. 
+You might end up with a more custom, or 
+some more complex, hybrid neural network architecture.
+Play video starting at :4:20 and follow transcript4:20
+So, just to be a bit more concrete about what are the standard CNN and 
+RNN architectures. 
+So in the literature you might have seen pictures like this. 
+So that's a standard neural net. 
+You might have seen pictures like this. 
+Well this is an example of a Convolutional Neural Network, and we'll see in 
+a later course exactly what this picture means and how can you implement this. 
+But convolutional networks are often used for image data. 
+And you might also have seen pictures like this. 
+And you'll learn how to implement this in a later course. 
+Recurrent neural networks are very good for 
+this type of one-dimensional sequence data that has maybe a temporal component. 
+You might also have heard about applications of machine learning 
+to both Structured Data and Unstructured Data. 
+Here's what the terms mean. 
+Structured Data means basically databases of data.
+Play video starting at :5:19 and follow transcript5:19
+So, for example, in housing price prediction, you might have a database or 
+the column that tells you the size and the number of bedrooms. 
+So, this is structured data, or in predicting whether or not a user will 
+click on an ad, you might have information about the user, such as the age, 
+some information about the ad, and then labels why that you're trying to predict. 
+So that's structured data, meaning that each of the features, 
+such as size of the house, the number of bedrooms, or 
+the age of a user, has a very well defined meaning. 
+In contrast, unstructured data refers to things like audio, raw audio, 
+or images where you might want to recognize what's in the image or text. 
+Here the features might be the pixel values in an image or 
+the individual words in a piece of text. 
+Historically, it has been much harder for 
+computers to make sense of unstructured data compared to structured data. 
+And in fact the human race has evolved to be very good at understanding 
+audio cues as well as images. 
+And then text was a more recent invention, but 
+people are just really good at interpreting unstructured data. 
+And so one of the most exciting things about the rise of neural networks is that, 
+thanks to deep learning, thanks to neural networks, computers are now much better 
+at interpreting unstructured data as well compared to just a few years ago. 
+And this creates opportunities for many new exciting applications that use 
+speech recognition, image recognition, natural language processing on text,
+Play video starting at :6:56 and follow transcript6:56
+much more than was possible even just two or three years ago. 
+I think because people have a natural empathy to understanding unstructured 
+data, you might hear about neural network successes on unstructured data 
+more in the media because it's just cool when the neural network recognizes a cat. 
+We all like that, and we all know what that means. 
+But it turns out that a lot of short term economic value that neural 
+networks are creating has also been on structured data, 
+such as much better advertising systems, much better profit recommendations, and 
+just a much better ability to process the giant databases that 
+many companies have to make accurate predictions from them. 
+So in this course, a lot of the techniques we'll go over will apply 
+to both structured data and to unstructured data. 
+For the purposes of explaining the algorithms, 
+we will draw a little bit more on examples that use unstructured data. 
+But as you think through applications of neural networks within your own team I 
+hope you find both uses for them in both structured and unstructured data.
+Play video starting at :8:2 and follow transcript8:02
+So neural networks have transformed supervised learning and 
+are creating tremendous economic value. 
+It turns out though, that the basic technical ideas behind neural networks 
+have mostly been around, sometimes for many decades. 
+So why is it, then, that they're only just now taking off and working so well? 
+In the next video, we'll talk about why it's only quite recently 
+that neural networks have become this incredibly powerful tool that you can use.
+
+From <https://www.coursera.org/learn/neural-networks-deep-learning/lecture/2c38r/supervised-learning-with-neural-networks> 
+
+If the basic technical ideas behind deep learning behind your networks have 
+been around for decades why are they only just now taking off in this video 
+let's go over some of the main drivers behind the rise of deep learning because 
+I think this will help you to spot the best opportunities within your own 
+organization to apply these to over the last few years a lot of people have 
+asked me "Andrew why is deep learning suddenly working so well?" and when I 
+am asked that question this is usually the picture I draw for them. Let's say we 
+plot a figure where on the horizontal axis we plot the amount of data we have 
+for a task and let's say on the vertical axis we plot the performance on involved 
+learning algorithms such as the accuracy of our spam classifier or our ad click 
+predictor or the accuracy of our neural net for figuring out the position of 
+other cars for our self-driving car. It turns out if you plot the performance of 
+a traditional learning algorithm like support vector machine or logistic 
+regression as a function of the amount of data you have you might get a curve 
+that looks like this where the performance improves for a while as you 
+add more data but after a while the performance you know pretty much 
+plateaus right suppose your horizontal lines enjoy that very well you know was 
+it they didn't know what to do with huge amounts of data and what happened in our 
+society over the last 10 years maybe is that for a lot of problems we went from 
+having a relatively small amount of data to having you know often a fairly large 
+amount of data and all of this was thanks to the digitization of a society 
+where so much human activity is now in the digital realm we spend so much time 
+on the computers on websites on mobile apps and activities on digital devices 
+creates data and thanks to the rise of inexpensive cameras built into our cell 
+phones, accelerometers, all sorts of sensors in the Internet of Things. We 
+also just have been collecting one more and more data. So over the last 20 years 
+for a lot of applications we just accumulate a lot more data more than traditional 
+learning algorithms were able to effectively take advantage of and what 
+new network lead turns out that if you train a small neural net then this 
+performance maybe looks like that. 
+If you train a somewhat larger Internet that's called as a medium-sized internet. 
+To fall in something a little bit between and if you train a very large neural net 
+then it's the form and often just keeps getting better and better. So, a couple 
+observations. One is if you want to hit this very high level of performance then 
+you need two things first: often you need to be able to train a big enough neural 
+network in order to take advantage of the huge amount of data and second you 
+need to be out here, on the x axis you do need a lot of data so we often say that 
+scale has been driving deep learning progress and by scale I mean both the 
+size of the neural network, meaning just a new network, a lot of hidden units, a 
+lot of parameters, a lot of connections, as well as the scale of the data. In fact, 
+today one of the most reliable ways to get better performance in a neural 
+network is often to either train a bigger network or throw more data at it 
+and that only works up to a point because eventually you run out of data 
+or eventually then your network is so big that it takes too long to train. But, 
+just improving scale has actually taken us a long way in the world of learning 
+in order to make this diagram a bit more technically precise and just add a few 
+more things I wrote the amount of data on the x-axis. Technically, this is amount 
+of labeled data where by label data I mean training examples we have both 
+the input X and the label Y I went to introduce a little bit of notation that 
+we'll use later in this course. We're going to use lowercase alphabet m to 
+denote the size of my training sets or the number of training examples 
+this lowercase M so that's the horizontal axis. A couple other details, to 
+this figure, in this regime of smaller training sets the relative ordering of the algorithms 
+is actually not very well defined so if you don't have a lot of training data it is 
+often up to your skill at hand engineering features that determines the 
+foreman so it's quite possible that if someone training an SVM is more 
+motivated to hand engineer features and someone training even larger neural nets, 
+that may be in this small training set regime, the SEM could do better 
+so you know in this region to the left of the figure the relative ordering 
+between gene algorithms is not that well defined and performance depends much 
+more on your skill at engine features and other mobile details of the 
+algorithms and there's only in this some big data regime. Very large training sets, 
+very large M regime in the right that we more consistently see large neural nets 
+dominating the other approaches. And so if any of your friends ask you why are 
+neural nets taking off I would encourage you to draw this picture for 
+them as well. So I will say that in the early days in their modern rise of deep 
+learning, it was scaled data and scale of computation just our ability to train 
+very large neural networks either on a CPU or GPU that enabled us 
+to make a lot of progress. But increasingly, especially in the last 
+several years, we've seen tremendous algorithmic innovation as well so I also 
+don't want to understate that. Interestingly, many of the algorithmic 
+innovations have been about trying to make neural networks run much faster so 
+as a concrete example one of the huge breakthroughs in neural networks has been 
+switching from a sigmoid function, which looks like this, to a railer function, 
+which we talked about briefly in an early video, that looks like this. If you 
+don't understand the details of one about the state don't worry about it but 
+it turns out that one of the problems of using sigmoid functions and machine 
+learning is that there are these regions here where the slope of the function 
+where the gradient is nearly zero and so learning becomes really slow, because when you 
+implement gradient descent and gradient is zero the parameters just change very 
+slowly. And so, learning is very slow whereas by changing the what's called 
+the activation function the neural network to use this function called the 
+value function of the rectified linear unit, or RELU, the gradient is equal to 
+1 for all positive values of input. right. And so, the gradient is much less 
+likely to gradually shrink to 0 and the gradient here. the slope of this line is 0 on the left but it turns out 
+that just by switching to the sigmoid function to the RELU function has made an algorithm called gradient 
+descent work much faster and so this is an example of maybe relatively simple algorithmic innovation. 
+But ultimately, the impact of this algorithmic innovation was it really helped computation. so there 
+are actually quite a lot of examples like this of where we change the algorithm 
+because it allows that code to run much faster and this allows us to train bigger neural networks, 
+or to do so the reason will decline even when we have a large network roam all the data. 
+The other reason that fast computation is important is that it turns out the process of training 
+your network is very intuitive. 
+Often, you have an idea for a neural network architecture and so you implement your idea and code. 
+Implementing your idea then lets you run an experiment which tells you how well 
+your neural network does and then by looking at it you go back to change the details of your new network
+and then you go around this circle over and over and when your new network takes a long time 
+to train it just takes a long time to go around this cycle and there's a huge difference in your productivity. 
+Building effective neural networks when you can have an idea and try it and see the work 
+in ten minutes, or maybe at most a day, versus if you've to train your neural 
+network for a month, which sometimes does happen, because you get a result back you know 
+in ten minutes or maybe in a day you should just try a lot more ideas and be 
+much more likely to discover in your network. And it works well for your 
+application and so faster computation has really helped in terms of speeding 
+up the rate at which you can get an experimental result back and this has 
+really helped both practitioners of neural networks as well as researchers 
+working and deep learning iterate much faster and improve your ideas much 
+faster. So, all this has also been a huge boon to the entire deep learning research community 
+which has been incredible with just inventing new algorithms and making nonstop progress on that front. 
+So these are some of the forces powering the rise of deep learning but the good news is that these 
+forces are still working powerfully to make deep learning even better. Take data... 
+society is still throwing out more digital data. Or take computation, with the rise of specialized hardware 
+like GPUs and faster networking many types of hardware, I'm actually quite confident 
+that our ability to do very large neural networks from a computation point 
+of view will keep on getting better and take algorithms relative to learning 
+research communities are continuously phenomenal at elevating on the 
+algorithms front. So because of this, I think that we can be optimistic answer 
+is that deep learning will keep on getting better for many years to come. 
+So with that, let's go on to the last video of the section where we'll talk a little 
+bit more about what you learn from this course.
+
+From <https://www.coursera.org/learn/neural-networks-deep-learning/lecture/praGm/why-is-deep-learning-taking-off> 
+
+So you're just about to reach the end of 
+the first week of material on the first course in this specialization. 
+Let me give you a quick sense of what you'll learn in the next few weeks as well. 
+As I said in the first video, 
+this specialization comprises five courses. 
+And right now, we're in the first of 
+these five courses, which teaches you the most important foundations, 
+really the most important building blocks of deep learning. 
+So by the end of this first course, 
+you will know how to build and get to work on a deep neural network. 
+So here the details of what is in this first course. 
+This course is four weeks of material. 
+And you're just coming up to the end of 
+the first week when you saw an introduction to deep learning. 
+At the end of each week, 
+there are also be 10 multiple-choice questions that 
+you can use to double check your understanding of the material. 
+So when you're done watching this video, 
+I hope you're going to take a look at those questions. 
+In the second week, you will then learn about the Basics of Neural Network Programming. 
+You'll learn the structure of what we 
+call the forward propagation and the back propagation 
+steps of the algorithm and how to implement neural networks efficiently. 
+Starting from the second week, 
+you also get to do a programming exercise 
+that lets you practice the material you've just learned, 
+implement the algorithms yourself and see it work for yourself. 
+I find it really satisfying when I learn about algorithm and I 
+get it coded up and I see it worked for myself. 
+So I hope you enjoy that too. 
+Having learned the framework for neural network programming in the third week, 
+you will code up a single hidden layer neural network. All right. 
+So you will learn about all the key concepts needed 
+to implement and get to work in neural network. 
+And then finally in week four, 
+you will build a deep neural network and neural network with 
+many layers and see it work for yourself. 
+So, congratulations on finishing the videos up to this one. 
+I hope that you now have a good high-level sense of what's happening in deep learning. 
+And perhaps some of you are also excited to 
+have some ideas of where you might want to apply deep learning yourself. 
+So, I hope that after this video, 
+you go on to take a look at the 10 multiple choice questions that follow this video 
+on the course website and just use 
+the 10 multiple choice questions to check your understanding. 
+And don't review, you don't get all the answers right the first time, 
+you can try again and again until you get them all right. 
+I found them useful to make sure that I'm understanding all the concepts, 
+I hope you're that way too. 
+So with that, congrats again for getting up to 
+here and I look forward to seeing you in the week two videos.
+
+From <https://www.coursera.org/learn/neural-networks-deep-learning/lecture/6A3es/about-this-course> 
+
+
+As part of this course by deeplearning.ai, I 
+hope to not just teach you the technical ideas in deep learning, but 
+also introduce you to some of the people, some of the heroes in deep learning. 
+The people that invented so 
+many of these ideas that you learn about in this course or in this specialization. 
+In these videos, I hope to also ask these leaders of deep learning 
+to give you career advice for how you can break into deep learning, for 
+how you can do research or find a job in deep learning. 
+As the first of this interview series, 
+I am delighted to present to you an interview with Geoffrey Hinton.
+Play video starting at ::38 and follow transcript0:38
+Welcome Geoff, and thank you for doing this interview with deeplearning.ai. 
+Thank you for inviting me. 
+I think that at this point you more than anyone else on this planet has 
+invented so many of the ideas behind deep learning. 
+And a lot of people have been calling you the godfather of deep learning. 
+Although it wasn't until we were chatting a few minutes ago, until I realized 
+you think I'm the first one to call you that, which I'm quite happy to have done.
+Play video starting at :1:6 and follow transcript1:06
+But what I want to ask is, many people know you as a legend, 
+I want to ask about your personal story behind the legend. 
+So how did you get involved in, going way back, how did you get involved in AI and 
+machine learning and neural networks?
+Play video starting at :1:22 and follow transcript1:22
+So when I was at high school, I had a classmate who was always 
+better than me at everything, he was a brilliant mathematician. 
+And he came into school one day and said, did you know the brain uses holograms?
+Play video starting at :1:38 and follow transcript1:38
+And I guess that was about 1966, and I said, sort of what's a hologram? 
+And he explained that in a hologram you can chop off half of it, and 
+you still get the whole picture. 
+And that memories in the brain might be distributed over the whole brain. 
+And so I guess he'd read about Lashley's experiments, 
+where you chop off bits of a rat's brain and 
+discover that it's very hard to find one bit where it stores one particular memory.
+Play video starting at :2:4 and follow transcript2:04
+So that's what first got me interested in how does the brain store memories.
+Play video starting at :2:10 and follow transcript2:10
+And then when I went to university, 
+I started off studying physiology and physics.
+Play video starting at :2:16 and follow transcript2:16
+I think when I was at Cambridge, 
+I was the only undergraduate doing physiology and physics.
+Play video starting at :2:21 and follow transcript2:21
+And then I gave up on that and 
+tried to do philosophy, because I thought that might give me more insight. 
+But that seemed to me actually 
+lacking in ways of distinguishing when they said something false. 
+And so then I switched to psychology.
+Play video starting at :2:41 and follow transcript2:41
+And in psychology they had very, very simple theories, and it seemed to me 
+it was sort of hopelessly inadequate to explaining what the brain was doing. 
+So then I took some time off and became a carpenter. 
+And then I decided that I'd try AI, and went of to Edinburgh, 
+to study AI with Langer Higgins. 
+And he had done very nice work on neural networks, and 
+he'd just given up on neural networks, and been very impressed by Winograd's thesis. 
+So when I arrived he thought I was kind of doing this old fashioned stuff, and 
+I ought to start on symbolic AI. 
+And we had a lot of fights about that, but I just kept on doing what I believed in. 
+And then what? 
+I eventually got a PhD in AI, and then I couldn't get a job in Britain. 
+But I saw this very nice advertisement for 
+Sloan Fellowships in California, and I managed to get one of those. 
+And I went to California, and everything was different there. 
+So in Britain, neural nets was regarded as kind of silly, 
+and in California, Don Norman and 
+David Rumelhart were very open to ideas about neural nets. 
+It was the first time I'd been somewhere where thinking about how the brain works, 
+and thinking about how that might relate to psychology, 
+was seen as a very positive thing. 
+And it was a lot of fun there, 
+in particular collaborating with David Rumelhart was great. 
+I see, great. So this was when you were at UCSD, and 
+you and Rumelhart around what, 1982, 
+wound up writing the seminal backprop paper, right? 
+Actually, it was more complicated than that. 
+What happened? 
+In, I think, early 1982, 
+David Rumelhart and me, and Ron Williams, 
+between us developed the backprop algorithm, 
+it was mainly David Rumelhart's idea. 
+We discovered later that many other people had invented it. 
+David Parker had invented, it probably after us, but before we'd published. 
+Paul Werbos had published it already quite a few years earlier, but 
+nobody paid it much attention. 
+And there were other people who'd developed very similar algorithms, 
+it's not clear what's meant by backprop. 
+But using the chain rule to get derivatives was not a novel idea. 
+I see, why do you think it was your paper that helped so 
+much the community latch on to backprop? 
+It feels like your paper marked an infection in the acceptance of this 
+algorithm, whoever accepted it. 
+So we managed to get a paper into Nature in 1986. 
+And I did quite a lot of political work to get the paper accepted. 
+I figured out that one of the referees was probably going to be Stuart Sutherland, 
+who was a well known psychologist in Britain. 
+And I went to talk to him for a long time, and 
+explained to him exactly what was going on. 
+And he was very impressed by the fact 
+that we showed that backprop could learn representations for words. 
+And you could look at those representations, which are little vectors, 
+and you could understand the meaning of the individual features. 
+So we actually trained it on little triples of words about family trees, 
+like Mary has mother Victoria. 
+And you'd give it the first two words, and it would have to predict the last word. 
+And after you trained it, 
+you could see all sorts of features in the representations of the individual words. 
+Like the nationality of the person there, 
+what generation they were, which branch of the family tree they were in, and so on. 
+That was what made Stuart Sutherland really impressed with it, and 
+I think that's why the paper got accepted. 
+Very early word embeddings, and you're already seeing learned 
+features of semantic meanings emerge from the training algorithm. 
+Yes, so from a psychologist's point of view, what was interesting was it unified 
+two completely different strands of ideas about what knowledge was like. 
+So there was the old psychologist's view that a concept is just a big 
+bundle of features, and there's lots of evidence for that. 
+And then there was the AI view of the time, which is a formal structurist view. 
+Which was that a concept is how it relates to other concepts. 
+And to capture a concept, you'd have to do something like a graph structure or 
+maybe a semantic net. 
+And what this back propagation example showed was, you could give it 
+the information that would go into a graph structure, or in this case a family tree.
+Play video starting at :7:22 and follow transcript7:22
+And it could convert that information into features in such a way that it could then 
+use the features to derive new consistent information, ie generalize. 
+But the crucial thing was this to and fro between the graphical representation or 
+the tree structured representation of the family tree, and 
+a representation of the people as big feature vectors. 
+And in fact that from the graph-like representation you could get feature 
+vectors. 
+And from the feature vectors, you could get more of the graph-like representation. 
+So this is 1986? 
+In the early 90s, Bengio showed that you can actually take real data, 
+you could take English text, and apply the same techniques there, and 
+get embeddings for real words from English text, and that impressed people a lot. 
+I guess recently we've been talking a lot about how fast computers like GPUs and 
+supercomputers that's driving deep learning. 
+I didn't realize that back between 1986 and the early 90's, it sounds like between 
+you and Benjio there was already the beginnings of this trend.
+Play video starting at :8:30 and follow transcript8:30
+Yes, it was a huge advance. 
+In 1986, I was using a list machine which was less than a tenth of a mega flop. 
+And by about 1993 or thereabouts, people were seeing ten mega flops. 
+I see. So there was a factor of 100, 
+and that's the point at which is was easy to use, 
+because computers were just getting faster. 
+Over the past several decades, you've invented so 
+many pieces of neural networks and deep learning. 
+I'm actually curious, of all of the things you've invented, 
+which of the ones you're still most excited about today?
+Play video starting at :9:6 and follow transcript9:06
+So I think the most beautiful one is the work I do with 
+Terry Sejnowski on Boltzmann machines. 
+So we discovered there was this really, 
+really simple learning algorithm that applied to great big 
+density connected nets where you could only see a few of the nodes. 
+So it would learn hidden representations and it was a very simple algorithm. 
+And it looked like the kind of thing you should be able to get in a brain because 
+each synapse only needed to know about the behavior of the two 
+neurons it was directly connected to.
+Play video starting at :9:37 and follow transcript9:37
+And the information that was propagated was the same. 
+There were two different phases, which we called wake and sleep. 
+But in the two different phases, 
+you're propagating information in just the same way. 
+Where as in something like back propagation, there's a forward pass and 
+a backward pass, and they work differently. 
+They're sending different kinds of signals.
+Play video starting at :9:58 and follow transcript9:58
+So I think that's the most beautiful thing. 
+And for many years it looked just like a curiosity, 
+because it looked like it was much too slow.
+Play video starting at :10:6 and follow transcript10:06
+But then later on, I got rid of a little bit of the beauty, and it started letting 
+me settle down and just use one iteration, in a somewhat simpler net. 
+And that gave restricted Boltzmann machines, 
+which actually worked effectively in practice. 
+So in the Netflix competition, for example, 
+restricted Boltzmann machines were one of the ingredients of the winning entry. 
+And in fact, a lot of the recent resurgence of neural net and 
+deep learning, starting about 2007, was the restricted Boltzmann machine, 
+and derestricted Boltzmann machine work that you and your lab did.
+Play video starting at :10:38 and follow transcript10:38
+Yes so that's another of the pieces of work I'm very happy with, 
+the idea of that you could train your restricted Boltzmann machine, which just 
+had one layer of hidden features and you could learn one layer of feature. 
+And then you could treat those features as data and do it again, and 
+then you could treat the new features you learned as data and do it again, 
+as many times as you liked. 
+So that was nice, it worked in practice. 
+And then UY Tay realized that the whole thing could be treated as a single model, 
+but it was a weird kind of model. 
+It was a model where at the top you had a restricted Boltzmann machine, but 
+below that you had a Sigmoid belief net which was something that 
+invented many years early. 
+So it was a directed model and 
+what we'd managed to come up with by training these restricted Boltzmann 
+machines was an efficient way of doing inferences in Sigmoid belief nets.
+Play video starting at :11:33 and follow transcript11:33
+So, around that time, 
+there were people doing neural nets, who would use densely connected nets, but 
+didn't have any good ways of doing probabilistic imprints in them. 
+And you had people doing graphical models, unlike my children, 
+who could do inference properly, but only in sparsely connected nets. 
+And what we managed to show was the way of learning these deep 
+belief nets so that there's an approximate form of inference that's very fast, 
+it's just hands in a single forward pass and that was a very beautiful result. 
+And you could guarantee that each time you learn that extra layer of features
+Play video starting at :12:16 and follow transcript12:16
+there was a band, each time you learned a new layer, you got a new band, and 
+the new band was always better than the old band. 
+The variational bands, showing as you add layers. 
+Yes, I remember that video. 
+So that was the second thing that I was really excited about. 
+And I guess the third thing was the work I did with on variational methods. 
+It turns out people in statistics had done similar work earlier, 
+but we didn't know about that.
+Play video starting at :12:44 and follow transcript12:44
+So we managed to make 
+EN work a whole lot better by showing you didn't need to do a perfect E step. 
+You could do an approximate E step. 
+And EN was a big algorithm in statistics. 
+And we'd showed a big generalization of it. 
+And in particular, in 1993, I guess, with Van Camp. 
+I did a paper, with I think, the first variational Bayes paper, 
+where we showed that you could actually do a version of Bayesian learning 
+that was far more tractable, by approximating the true posterior with a. 
+And you could do that in neural net. 
+And I was very excited by that. 
+I see. Wow, right. 
+Yep, I think I remember all of these papers. 
+You and Hinton, approximate Paper, spent many hours reading over that. 
+And I think some of the algorithms you use today, or 
+some of the algorithms that lots of people use almost every day, are what, 
+things like dropouts, or I guess ReLU activations came from your group? 
+Yes and no. 
+So other people have thought about rectified linear units. 
+And we actually did some work with restricted Boltzmann machines showing 
+that a ReLU was almost exactly equivalent to a whole stack of logistic units. 
+And that's one of the things that helped ReLUs catch on. 
+I was really curious about that. 
+The value paper had a lot of math showing that this function 
+can be approximated with this really complicated formula. 
+Did you do that math so your paper would get accepted into an academic conference, 
+or did all that math really influence the development of max of 0 and x?
+Play video starting at :14:26 and follow transcript14:26
+That was one of the cases where actually the math was important 
+to the development of the idea. 
+So I knew about rectified linear units, obviously, and 
+I knew about logistic units. 
+And because of the work on Boltzmann machines, 
+all of the basic work was done using logistic units. 
+And so the question was, 
+could the learning algorithm work in something with rectified linear units? 
+And by showing the rectified linear units were almost exactly equivalent to a stack 
+of logistic units, we showed that all the math would go through. 
+I see. 
+And it provided the inspiration for today, tons of people use ReLU and 
+it just works without- Yeah. 
+Without necessarily needing to understand the same motivation.
+Play video starting at :15:13 and follow transcript15:13
+Yeah, one thing I noticed later when I went to Google. 
+I guess in 2014, I gave a talk at Google about using ReLUs and 
+initializing with the identity matrix. 
+because the nice thing about ReLUs is that if you keep replicating the hidden 
+layers and you initialize with the identity, 
+it just copies the pattern in the layer below.
+Play video starting at :15:36 and follow transcript15:36
+And so I was showing that you could train networks with 300 hidden layers and 
+you could train them really efficiently if you initialize with their identity. 
+But I didn't pursue that any further and I really regret not pursuing that. 
+We published one paper with showing you could initialize an active 
+showing you could initialize recurringness like that. 
+But I should have pursued it further because Later on these residual 
+networks is really that kind of thing. 
+Over the years I've heard you talk a lot about the brain. 
+I've heard you talk about relationship being backprop and the brain. 
+What are your current thoughts on that? 
+I'm actually working on a paper on that right now.
+Play video starting at :16:18 and follow transcript16:18
+I guess my main thought is this. 
+If it turns out the back prop is a really good algorithm for doing learning.
+Play video starting at :16:26 and follow transcript16:26
+Then for sure evolution could've figured out how to implement it.
+Play video starting at :16:32 and follow transcript16:32
+I mean you have cells that could turn into either eyeballs or teeth. 
+Now, if cells can do that, they can for sure implement backpropagation and 
+presumably this huge selective pressure for it. 
+So I think the neuroscientist idea that it doesn't look plausible is just silly. 
+There may be some subtle implementation of it. 
+And I think the brain probably has something that may not be exactly be 
+backpropagation, but it's quite close to it. 
+And over the years, I've come up with a number of ideas about how this might work. 
+So in 1987, working with Jay McClelland, 
+I came up with the recirculation algorithm, 
+where the idea is you send information round a loop.
+Play video starting at :17:17 and follow transcript17:17
+And you try to make it so 
+that things don't change as information goes around this loop. 
+So the simplest version would be you have input units and hidden units, and 
+you send information from the input to the hidden and then back to the input, and 
+then back to the hidden and then back to the input and so on. 
+And what you want, you want to train an autoencoder, 
+but you want to train it without having to do backpropagation. 
+So you just train it to try and get rid of all variation in the activities. 
+So the idea is that the learning rule for 
+synapse is change the weighting proportion to the presynaptic input and 
+in proportion to the rate of change at the post synaptic input. 
+But in recirculation, you're trying to make the post synaptic input, 
+you're trying to make the old one be good and the new one be bad, so 
+you're changing in that direction.
+Play video starting at :18:11 and follow transcript18:11
+We invented this algorithm before neuroscientists come up with 
+spike-timing-dependent plasticity. 
+Spike-timing-dependent plasticity is actually the same algorithm but the other 
+way round, where the new thing is good and the old thing is bad in the learning rule. 
+So you're changing the weighting proportions to the preset outlook activity 
+times the new person outlook activity minus the old one.
+Play video starting at :18:37 and follow transcript18:37
+Later on I realized in 2007, that if you took a stack of 
+Restricted Boltzmann machines and you trained it up. 
+After it was trained, you then had exactly the right conditions for 
+implementing backpropagation by just trying to reconstruct. 
+If you looked at the reconstruction era, that reconstruction era would 
+actually tell you the derivative of the discriminative performance. 
+And at the first deep learning workshop at in 2007, I gave a talk about that. 
+That was almost completely ignored. 
+Later on, Joshua Benjo, took up the idea and 
+that's actually done quite a lot of more work on that. 
+And I've been doing more work on it myself. 
+And I think this idea that if you have a stack of autoencoders, then you can 
+get derivatives by sending activity backwards and locate reconstructionaires, 
+is a really interesting idea and may well be how the brain does it. 
+One other topic that I know you follow about and that I hear you're still 
+working on is how to deal with multiple time skills in deep learning? 
+So, can you share your thoughts on that? 
+Yes, so actually, that goes back to my first years of graduate student. 
+The first talk I ever gave was about using what I called fast weights. 
+So weights that adapt rapidly, but decay rapidly. 
+And therefore can hold short term memory. 
+And I showed in a very simple system in 1973 that you could do 
+true recursion with those weights. 
+And what I mean by true recursion is that the neurons that is used 
+in representing things get re-used for representing things in the recursive core.
+Play video starting at :20:30 and follow transcript20:30
+And the weights that is used for 
+actually knowledge get re-used in the recursive core. 
+And so that leads the question of when you pop out your recursive core, 
+how do you remember what it was you were in the middle of doing? 
+Where's that memory? 
+because you used the neurons for the recursive core.
+Play video starting at :20:46 and follow transcript20:46
+And the answer is you can put that memory into fast weights, and 
+you can recover the activities neurons from those fast weights. 
+And more recently working with Jimmy Ba, 
+we actually got a paper in it by using fast weights for recursion like that. 
+I see. 
+So that was quite a big gap. 
+The first model was unpublished in 1973 and 
+then Jimmy Ba's model was in 2015, I think, or 2016. 
+So it's about 40 years later. 
+And, I guess, one other idea of Quite a few years now, 
+over five years, I think is capsules, where are you with that? 
+Okay, so I'm back to the state I'm used to being in. 
+Which is I have this idea I really believe in and nobody else believes it. 
+And I submit papers about it and they would get rejected. 
+But I really believe in this idea and I'm just going to keep pushing it. 
+So it hinges on, there's a couple of key ideas. 
+One is about how you represent multi dimensional entities, and you 
+can represent multi-dimensional entities by just a little backdoor activities. 
+As long as you know there's any one of them. 
+So the idea is in each region of the image, you'll assume there's at most, 
+one of the particular kind of feature.
+Play video starting at :22:15 and follow transcript22:15
+And then you'll use a bunch of neurons, and 
+their activities will represent the different aspects to that feature,
+Play video starting at :22:24 and follow transcript22:24
+like within that region exactly what are its x and y coordinates? 
+What orientation is it at? 
+How fast is it moving? 
+What color is it? 
+How bright is it? 
+And stuff like that. 
+So you can use a whole bunch of neurons to represent different dimensions of 
+the same thing. 
+Provided there's only one of them.
+Play video starting at :22:40 and follow transcript22:40
+That's a very different way of doing representation 
+from what we're normally used to in neural nets. 
+Normally in neural nets, we just have a great big layer, 
+and all the units go off and do whatever they do. 
+But you don't think of bundling them up into little groups that represent 
+different coordinates of the same thing.
+Play video starting at :22:58 and follow transcript22:58
+So I think we should beat this extra structure. 
+And then the other idea that goes with that. 
+So this means in the trut 367 00:23:09,280 --&gt; 00:23:11,270 Yes. To different subsets.
+Play video starting at :23:11 and follow transcript23:11
+Yes. To represent, right, rather than- 
+I call each of those subsets a capsule. 
+I see. 
+And the idea is a capsule is able to represent an instance of a feature, but 
+only one. 
+And it represents all the different properties of that feature. 
+It's a feature that has a lot of properties as opposed to 
+a normal neuron and normal neural nets, which has just one scale of property. 
+Yeah, I see yep. 
+And then what you can do if you've got that, is you can do something that normal 
+neural nets are very bad at, which is you can do what I call routine by agreement. 
+So let's suppose you want to do segmentation and 
+you have something that might be a mouth and something else that might be a nose.
+Play video starting at :23:57 and follow transcript23:57
+And you want to know if you should put them together to make one thing. 
+So the idea should have a capsule for 
+a mouth that has the parameters of the mouth. 
+And you have a capsule for a nose that has the parameters of the nose. 
+And then to decipher whether to put them together or 
+not, you get each of them to vote for what the parameters should be for a face.
+Play video starting at :24:19 and follow transcript24:19
+Now if the mouth and the nose are in the right spacial relationship, 
+they will agree. 
+So when you get two captures at one level voting for the same set of parameters at 
+the next level up, you can assume they're probably right, 
+because agreement in a high dimensional space is very unlikely.
+Play video starting at :24:36 and follow transcript24:36
+And that's a very different way of doing filtering, 
+than what we normally use in neural nets. 
+So I think this routing by agreement is going to be crucial for 
+getting neural nets to generalize much better from limited data. 
+I think it'd be very good at getting the changes in viewpoint, 
+very good at doing segmentation. 
+And I'm hoping it will be much more statistically efficient than what we 
+currently do in neural nets. 
+Which is, if you want to deal with changes in viewpoint, 
+you just give it a whole bunch of changes in view point and training on them all. 
+I see, right, so rather than FIFO learning, supervised learning, 
+you can learn this in some different way.
+Play video starting at :25:20 and follow transcript25:20
+Well, I still plan to do it with supervised learning, but 
+the mechanics of the forward paths are very different. 
+It's not a pure forward path in the sense that there's little bits of iteration 
+going on, where you think you found a mouth and you think you found a nose. 
+And use a little bit of iteration to decide 
+whether they should really go together to make a face. 
+And you can do back props from that iteration. 
+So you can try and do it a little discriminatively, 
+and we're working on that now at my group in Toronto. 
+So I now have a little Google team in Toronto, part of the Brain team. 
+That's what I'm excited about right now. 
+I see, great, yeah. 
+Look forward to that paper when that comes out. 
+Yeah, if it comes out [LAUGH]. 
+You worked in deep learning for several decades. 
+I'm actually really curious, how has your thinking, 
+your understanding of AI changed over these years?
+Play video starting at :26:20 and follow transcript26:20
+So I guess a lot of my intellectual history has been around back propagation, 
+and how to use back propagation, how to make use of its power. 
+So to begin with, in the mid 80s, we were using it for 
+discriminative learning and it was working well. 
+I then decided, by the early 90s, 
+that actually most human learning was going to be unsupervised learning. 
+And I got much more interested in unsupervised learning, and 
+that's when I worked on things like the Wegstein algorithm. 
+And your comments at that time really influenced my thinking as well. 
+So when I was leading Google Brain, our first project spent a lot of 
+work in unsupervised learning because of your influence. 
+Right, and I may have misled you. 
+Because in the long run, 
+I think unsupervised learning is going to be absolutely crucial.
+Play video starting at :27:15 and follow transcript27:15
+But you have to sort of face reality. 
+And what's worked over the last ten years or so is supervised learning. 
+Discriminative training, where you have labels, or 
+you're trying to predict the next thing in the series, so that acts as the label. 
+And that's worked incredibly well.
+Play video starting at :27:37 and follow transcript27:37
+I still believe that unsupervised learning is going to be crucial, and things will 
+work incredibly much better than they do now when we get that working properly, but 
+we haven't yet.
+Play video starting at :27:49 and follow transcript27:49
+Yeah, I think many of the senior people in deep learning, 
+including myself, remain very excited about it. 
+It's just none of us really have almost any idea how to do it yet. 
+Maybe you do, I don't feel like I do. 
+Variational altering code is where you use the reparameterization tricks. 
+Seemed to me like a really nice idea. 
+And generative adversarial nets also seemed to me to be a really nice idea. 
+I think generative adversarial nets are one of 
+the sort of biggest ideas in deep learning that's really new. 
+I'm hoping I can make capsules that successful, but 
+right now generative adversarial nets, I think, have been a big breakthrough. 
+What happened to sparsity and slow features, 
+which were two of the other principles for building unsupervised models?
+Play video starting at :28:41 and follow transcript28:41
+I was never as big on sparsity as you were, buddy. 
+But slow features, I think, is a mistake. 
+You shouldn't say slow. 
+The basic idea is right, but you shouldn't go for features that don't change, 
+you should go for features that change in predictable ways.
+Play video starting at :29:1 and follow transcript29:01
+So here's a sort of basic principle about how you model anything.
+Play video starting at :29:8 and follow transcript29:08
+You take your measurements, and you're applying nonlinear 
+transformations to your measurements until you get to 
+a representation as a state vector in which the action is linear. 
+So you don't just pretend it's linear like you do with common filters. 
+But you actually find a transformation from the observables to 
+the underlying variables where linear operations, 
+like matrix multipliers on the underlying variables, will do the work. 
+So for example, if you want to change viewpoints. 
+If you want to produce the image from another viewpoint, 
+what you should do is go from the pixels to coordinates.
+Play video starting at :29:47 and follow transcript29:47
+And once you got to the coordinate representation, 
+which is a kind of thing I'm hoping captures will find. 
+You can then do a matrix multiplier to change viewpoint, and 
+then you can map it back to pixels. 
+Right, that's why you did all that. 
+I think that's a very, very general principle. 
+That's why you did all that work on face synthesis, right? 
+Where you take a face and compress it to very low dimensional vector, and so 
+you can fiddle with that and get back other faces. 
+I had a student who worked on that, I didn't do much work on that myself.
+Play video starting at :30:17 and follow transcript30:17
+Now I'm sure you still get asked all the time, 
+if someone wants to break into deep learning, what should they do? 
+So what advice would you have? 
+I'm sure you've given a lot of advice to people in one on one settings, but for 
+the global audience of people watching this video. 
+What advice would you have for them to get into deep learning? 
+Okay, so my advice is sort of read the literature, but don't read too much of it. 
+So this is advice I got from my advisor, which is very unlike what most people say. 
+Most people say you should spend several years reading the literature and 
+then you should start working on your own ideas. 
+And that may be true for some researchers, but for creative researchers I think 
+what you want to do is read a little bit of the literature. 
+And notice something that you think everybody is doing wrong, 
+I'm contrary in that sense. 
+You look at it and it just doesn't feel right. 
+And then figure out how to do it right.
+Play video starting at :31:16 and follow transcript31:16
+And then when people tell you, that's no good, just keep at it. 
+And I have a very good principle for helping people keep at it, 
+which is either your intuitions are good or they're not. 
+If your intuitions are good, you should follow them and 
+you'll eventually be successful. 
+If your intuitions are not good, it doesn't matter what you do. 
+I see [LAUGH]. 
+Inspiring advice, might as well go for it. 
+You might as well trust your intuitions. 
+There's no point not trusting them. 
+I see, yeah. 
+I usually advise people to not just read, but replicate published papers. 
+And maybe that puts a natural limiter on how many you could do, 
+because replicating results is pretty time consuming.
+Play video starting at :32:1 and follow transcript32:01
+Yes, it's true that when you're trying to replicate a published 
+you discover all over little tricks necessary to make it work. 
+The other advice I have is, never stop programming. 
+Because if you give a student something to do, if they're a bad student, 
+they'll come back and say, it didn't work. 
+And the reason it didn't work would be some little decision they made, 
+that they didn't realize is crucial. 
+And if you give it to a good student, like for example. 
+You can give him anything and he'll come back and say, it worked.
+Play video starting at :32:32 and follow transcript32:32
+I remember doing this once, and I said, but wait a minute. 
+Since we last talked, 
+I realized it couldn't possibly work for the following reason. 
+And said, yeah, I realized that right away, so I assumed you didn't mean that. 
+[LAUGH] I see, yeah, that's great, yeah. 
+Let's see, any other advice for 
+people that want to break into AI and deep learning? 
+I think that's basically, read enough so you start developing intuitions. 
+And then, trust your intuitions and go for it, 
+don't be too worried if everybody else says it's nonsense. 
+And I guess there's no way to know if others are right or 
+wrong when they say it's nonsense, but you just have to go for it, and then find out. 
+Right, but there is one thing, which is, if you think it's a really good idea, 
+and other people tell you it's complete nonsense, 
+then you know you're really on to something. 
+So one example of that is when and I first came up with variational methods.
+Play video starting at :33:35 and follow transcript33:35
+I sent mail explaining it to a former student of mine called Peter Brown, 
+who knew a lot about.
+Play video starting at :33:43 and follow transcript33:43
+And he showed it to people who worked with him, 
+called the brothers, they were twins, I think. 
+And he then told me later what they said, and they said, 
+either this guy's drunk, or he's just stupid, so 
+they really, really thought it was nonsense. 
+Now, it could have been partly the way I explained it, 
+because I explained it in intuitive terms.
+Play video starting at :34:9 and follow transcript34:09
+But when you have what you think is a good idea and 
+other people think is complete rubbish, that's the sign of a really good idea.
+Play video starting at :34:18 and follow transcript34:18
+I see, and research topics, 
+new grad students should work on capsules and 
+maybe unsupervised learning, any other? 
+One good piece of advice for new grad students is, 
+see if you can find an advisor who has beliefs similar to yours. 
+Because if you work on stuff that your advisor feels deeply about, 
+you'll get a lot of good advice and time from your advisor. 
+If you work on stuff your advisor's not interested in, 
+all you'll get is, you get some advice, but it won't be nearly so useful. 
+I see, and last one on advice for learners, 
+how do you feel about people entering a PhD program? 
+Versus joining a top company, or a top research group? 
+Yeah, it's complicated, I think right now, what's happening is, 
+there aren't enough academics trained in deep learning to educate all the people 
+that we need educated in universities. 
+There just isn't the faculty bandwidth there, but 
+I think that's going to be temporary. 
+I think what's happened is, most departments have been very slow to 
+understand the kind of revolution that's going on. 
+I kind of agree with you, that it's not quite a second industrial revolution, but 
+it's something on nearly that scale. 
+And there's a huge sea change going on, 
+basically because our relationship to computers has changed. 
+Instead of programming them, we now show them, and they figure it out. 
+That's a completely different way of using computers, and 
+computer science departments are built around the idea of programming computers. 
+And they don't understand that sort of,
+Play video starting at :36:5 and follow transcript36:05
+this showing computers is going to be as big as programming computers. 
+Except they don't understand that half the people in the department should be people 
+who get computers to do things by showing them. 
+So my department refuses to acknowledge that it should have lots and 
+lots of people doing this. 
+They think they got a couple, maybe a few more, but not too many.
+Play video starting at :36:31 and follow transcript36:31
+And in that situation, 
+you have to remind the big companies to do quite a lot of the training. 
+So Google is now training people, we call brain residence, 
+I suspect the universities will eventually catch up. 
+I see, right, in fact, maybe a lot of students have figured this out. 
+A lot of top 50 programs, over half of the applicants are actually 
+wanting to work on showing, rather than programming. 
+Yeah, cool, yeah, in fact, to give credit where it's due, 
+whereas a deep learning AI is creating a deep learning specialization. 
+As far as I know, their first deep learning MOOC was actually yours taught 
+on Coursera, back in 2012, as well.
+Play video starting at :37:12 and follow transcript37:12
+And somewhat strangely, 
+that's when you first published the RMS algorithm, which also is a rough.
+Play video starting at :37:20 and follow transcript37:20
+Right, yes, well, as you know, that was because you invited me to do the MOOC. 
+And then when I was very dubious about doing, you kept pushing me to do it, so 
+it was very good that I did, although it was a lot of work. 
+Yes, and thank you for doing that, I remember you complaining to me, 
+how much work it was. 
+And you staying out late at night, but I think many, many learners have 
+benefited for your first MOOC, so I'm very grateful to you for it, so. 
+That's good, yeah Yeah, over the years, 
+I've seen you embroiled in debates about paradigms for AI, and 
+whether there's been a paradigm shift for AI. 
+What are your, can you share your thoughts on that? 
+Yes, happily, so I think that in the early days, back in the 50s, 
+people like von Neumann and Turing didn't believe in symbolic AI, 
+they were far more inspired by the brain. 
+Unfortunately, they both died much too young, and their voice wasn't heard. 
+And in the early days of AI, 
+people were completely convinced that the representations you need for 
+intelligence were symbolic expressions of some kind. 
+Sort of cleaned up logic, where you could do non-monotonic things, and not quite 
+logic, but something like logic, and that the essence of intelligence was reasoning. 
+What's happened now is, there's a completely different view, 
+which is that what a thought is, is just a great big vector of neural activity, 
+so contrast that with a thought being a symbolic expression. 
+And I think the people who thought that thoughts were symbolic expressions just 
+made a huge mistake.
+Play video starting at :39:1 and follow transcript39:01
+What comes in is a string of words, and what comes out is a string of words.
+Play video starting at :39:8 and follow transcript39:08
+And because of that, strings of words are the obvious way to represent things. 
+So they thought what must be in between was a string of words, or 
+something like a string of words. 
+And I think what's in between is nothing like a string of words. 
+I think the idea that thoughts must be in some kind of language is as silly as 
+the idea that understanding the layout of a spatial scene 
+must be in pixels, pixels come in. 
+And if we could, if we had a dot matrix printer attached to us, 
+then pixels would come out, but what's in between isn't pixels.
+Play video starting at :39:43 and follow transcript39:43
+And so I think thoughts are just these great big vectors, and 
+that big vectors have causal powers. 
+They cause other big vectors, and 
+that's utterly unlike the standard AI view that thoughts are symbolic expressions. 
+I see, good,
+Play video starting at :39:57 and follow transcript39:57
+I guess AI is certainly coming round to this new point of view these days. 
+Some of it, 
+I think a lot of people in AI still think thoughts have to be symbolic expressions. 
+Thank you very much for doing this interview. 
+It was fascinating to hear how deep learning has evolved over the years, 
+as well as how you're still helping drive it into the future, so thank you, Jeff.
+
+From <https://www.coursera.org/learn/neural-networks-deep-learning/lecture/dcm5r/geoffrey-hinton-interview> 
+
+
+
+
