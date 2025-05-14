@@ -1,5 +1,5 @@
-Welcome to your first (required) programming assignment of Course 1 of the Deep Learning Specialization! 
-You'll be building a logistic regression classifier to recognize cats (meow!). 
-This assignment will step you through how to do this with a Neural Network mindset, 
-and so will also hone your intuitions about deep learning. 
-By the end of this notebook, you'll be able to classify your own photo as cat/not cat (meow?).  
+Welcome to the first (Optional) programming exercise of Course 1 of the Deep Learning Specialization. 
+In this notebook you will (insert notebook description here).
+This notebook will give you a brief introduction to Python. 
+Even if you've used Python before, these exercises will help familiarize you with some essential functions.   
+
